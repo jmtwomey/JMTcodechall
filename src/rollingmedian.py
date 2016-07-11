@@ -2,6 +2,9 @@
 """
 Created on Wed Jul  6 19:48:32 2016
 
+Takes input txt file of input transation, creates graph in edge list format and calculates median for a 60 second window preceding every transaction
+
+
 @author: Jimmy
 """
 
@@ -9,7 +12,7 @@ import json
 import datetime
 import statistics
 
-f=open('venmo-trans.txt','r') #load input
+f=open('http://github/venmo_input/venmo-trans.txt','r') #load input
 filelist=[];
 for lines in f: #save input file results
     filelist.append(lines)
@@ -68,7 +71,7 @@ for i in range(len(filelist)): #assume each loop is one transaction: calculate u
     resultslist.append(roll_med_degree) #store valye
     
     
-f=open('output.txt','w')
+f=open('https://github.com/JMTcodechall/venmo_outputs/output.txt','w')
 for i in resultslist:
     f.write(str(i)+'/n')
 f.close()  
