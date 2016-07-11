@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jul  6 19:48:32 2016
-
+ verifies that a minute of data is processed within a minute of runtime
 functionality test
 @author: Jimmy
 """
@@ -19,8 +19,8 @@ f.close() #close input file
 
 #timeinput="2016-04-07T03:33:19Z" #test time
 #dateobj_input=datetime.datetime.strptime(timeinput,'%Y-%m-%dT%H:%M:%SZ')#convert to datetime object
-
-count0=0;
+failcondit=0
+count0=0
 peopledict={} #initilize dictionary for assigning numbers to people
 edgelist=[] #initialize graph storage (in edge list form)
 newline='\n' #in case text file contains \n
@@ -56,7 +56,8 @@ for i in range(len(filelist)): #assume each loop is one transaction: calculate u
     nodelist=set(val for sublist in edgelist for val in sublist) #flatten edge list and remove duplicates
         #count connections to each node
     t2=time.time()
-    
+    if (t2-t1)>60:
+        failcondit=1
     print(t2-t1)
     vertslist=[]
     edgelist=sorted(edgelist) #sort to help check for duplicates
@@ -80,7 +81,11 @@ f=open('https://github.com/jmtwomey/JMTcodechall/insight_testsuite/tests/your-ow
 for i in resultslist:
     f.write(str(i)+'/n')
 f.close()  
-    
+
+if failcondit=1
+    print('fail')
+else:
+    print('pass')
     
 # graph visualization    
 #import networkx as nx
