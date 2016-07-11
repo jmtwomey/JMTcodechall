@@ -53,8 +53,8 @@ for i in range(len(filelist)): #assume each loop is one transaction: calculate u
                 
                 edgelist.append([min(entry_actor,entry_target),max(entry_actor,entry_target)])#construct graph in edge list representation
                 
-        nodelist=set(val for sublist in edgelist for val in sublist) #flatten edge list and remove duplicates
-        #count connections to each node
+    nodelist=set(val for sublist in edgelist for val in sublist) #flatten edge list and remove duplicates
+    #count connections to each node
     vertslist=[]
     edgelist=sorted(edgelist) #sort to help check for duplicates
     for i in nodelist: #loop through list of unique users
