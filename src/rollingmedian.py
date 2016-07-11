@@ -12,7 +12,7 @@ import json
 import datetime
 import statistics
 
-f=open('http://github/venmo_input/venmo-trans.txt','r') #load input
+f=open('http://github/jmtwomey/venmo_input/venmo-trans.txt','r') #load input
 filelist=[];
 for lines in f: #save input file results
     filelist.append(lines)
@@ -71,7 +71,7 @@ for i in range(len(filelist)): #assume each loop is one transaction: calculate u
     resultslist.append(roll_med_degree) #store valye
     
     
-f=open('https://github.com/JMTcodechall/venmo_outputs/output.txt','w')
+f=open('https://github.com/jmtwomey/JMTcodechall/venmo_outputs/output.txt','w')
 for i in resultslist:
     f.write(str(i)+'/n')
 f.close()  
