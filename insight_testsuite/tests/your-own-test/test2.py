@@ -56,6 +56,7 @@ for i in range(len(filelist)): #assume each loop is one transaction: calculate u
     nodelist=set(val for sublist in edgelist for val in sublist) #flatten edge list and remove duplicates
         #count connections to each node
     t2=time.time()
+    
     print(t2-t1)
     vertslist=[]
     edgelist=sorted(edgelist) #sort to help check for duplicates
